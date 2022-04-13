@@ -29,7 +29,7 @@
             <PasswordField fx:id="password" layoutX="150.0" layoutY="175.0" promptText="Password" style="-fx-border-color: #C3B1E1; -fx-border-width: 0px 0px 2px 0px;" />
             <Button fx:id="loginButton" layoutX="179.0" layoutY="247.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="34.0" prefWidth="76.0" style="-fx-background-color: #C3B1E1;" text="Login" />
             <Button layoutX="314.0" layoutY="31.0" mnemonicParsing="false" text="x" />
-            <Label fx:id="wrongLogIn" layoutX="165.0" layoutY="91.0" textFill="#ee0404">
+            <Label fx:id="wrongLogIn" layoutX="101.0" layoutY="78.0" prefHeight="37.0" prefWidth="0.0" textFill="#ee0404">
                <font>
                   <Font size="15.0" />
                </font>
