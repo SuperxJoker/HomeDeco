@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,31 +11,53 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.InterfaceController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="209.0" style="-fx-background-color: #C3B1E1;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="400.0" prefWidth="204.0" styleClass="backgroundColor" stylesheets="@cssfiles/gradientbackground.css" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="394.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="baveș-grey" prefHeight="400.0" prefWidth="403.0" styleClass="anchor" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="42.0" layoutY="129.0" text="Username">
+            <Label layoutX="42.0" layoutY="190.0" style="-fx-background-color: transparent;" text="Username">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Serif Regular" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="175.0" text="Password">
+            <Label layoutX="43.0" layoutY="230.0" style="-fx-background-color: transparent;" text="Password">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Serif Regular" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="150.0" layoutY="129.0" promptText="Username" style="-fx-border-color: #C3B1E1; -fx-border-width: 0px 0px 2px 0px;" />
-            <PasswordField fx:id="password" layoutX="150.0" layoutY="175.0" promptText="Password" style="-fx-border-color: #C3B1E1; -fx-border-width: 0px 0px 2px 0px;" />
-            <Button fx:id="loginButton" layoutX="179.0" layoutY="247.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="34.0" prefWidth="76.0" style="-fx-background-color: #C3B1E1;" text="Login" />
-            <Button layoutX="314.0" layoutY="31.0" mnemonicParsing="false" text="x" />
-            <Label fx:id="wrongLogIn" layoutX="101.0" layoutY="78.0" prefHeight="37.0" prefWidth="0.0" textFill="#ee0404">
+            <TextField fx:id="username" layoutX="151.0" layoutY="184.0" prefHeight="32.0" prefWidth="194.0" promptText="Username" style="-fx-border-color: #C3B1E1; -fx-border-width: 0px 0px 2px 0px;">
                <font>
-                  <Font size="15.0" />
+                  <Font name="Serif Regular" size="12.0" />
+               </font></TextField>
+            <PasswordField fx:id="password" layoutX="151.0" layoutY="230.0" prefHeight="33.0" prefWidth="195.0" promptText="Password" style="-fx-border-color: #C3B1E1; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Serif Regular" size="12.0" />
+               </font></PasswordField>
+            <Button id="bevel-grey" fx:id="loginButton" layoutX="219.0" layoutY="287.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="25.0" prefWidth="127.0" stylesheets="@cssfiles/loginbutton.css" text="Sign in">
+               <font>
+                  <Font name="Serif Regular" size="12.0" />
+               </font></Button>
+            <Label fx:id="wrongLogIn" layoutX="43.0" layoutY="140.0" prefHeight="21.0" prefWidth="333.0" textFill="#ee0404">
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
                </font>
             </Label>
+            <Label layoutX="42.0" layoutY="62.0" prefHeight="36.0" prefWidth="280.0" text="WELCOME!" textAlignment="CENTER">
+               <font>
+                  <Font name="Serif Regular" size="33.0" />
+               </font>
+            </Label>
+            <Button id="account" fx:id="createButton" layoutX="42.0" layoutY="287.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="127.0" stylesheets="@cssfiles/createaccountbutton.css" text="Create Account">
+               <font>
+                  <Font name="Serif Regular" size="12.0" />
+               </font>
+            </Button>
          </children>
+         <stylesheets>
+            <URL value="@cssfiles/loginbutton.css" />
+            <URL value="@cssfiles/anchorpanebackground.css" />
+         </stylesheets>
       </AnchorPane>
    </right>
 </BorderPane>
