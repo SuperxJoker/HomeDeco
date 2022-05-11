@@ -46,7 +46,7 @@ public class InterfaceController implements Initializable {
 
     public InterfaceController() {
     }
-
+    //create account
     public void createAccount(ActionEvent event) throws IOException{
         createAccountForm();
     }
