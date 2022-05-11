@@ -3,24 +3,20 @@
     -fx-color-two: #d9d9d9;
     -fx-color-three: #f6f6f6;
 
-    -fx-background-color:
-            linear-gradient(#f2f2f2, -fx-color-one),
-            linear-gradient(#fcfcfc 0%, -fx-color-two 20%, -fx-color-one 100%),
-            linear-gradient(#dddddd 0%, -fx-color-three 50%);
-    -fx-background-radius: 8, 7, 6;
-    -fx-background-insets: 0, 1, 2;
-    -fx-text-fill: black;
-    -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-background-color: linear-gradient(#f2f2f2, -fx-color-one),
+    linear-gradient(#fcfcfc 0%, -fx-color-two 20%, -fx-color-one 100%),
+    linear-gradient(#dddddd 0%, -fx-color-three 50%);
 }
 
+
 #bevel-grey:hover {
-    -fx-color-one: #C3B1E1;
-    -fx-color-two: #C3B1E1;
-    -fx-color-three: #C3B1E1;
+    -fx-color-one: #E1B894;
+    -fx-color-two: #E1B894;
+    -fx-color-three: #E1B894;
 }
 
 #bevel-grey:pressed {
-    -fx-color-one: #B28DFF;
-    -fx-color-two: #B28DFF;
-    -fx-color-three: #B28DFF;
+    -fx-color-one:  #836953;
+    -fx-color-two:   #836953;
+    -fx-color-three:  #836953;
 }

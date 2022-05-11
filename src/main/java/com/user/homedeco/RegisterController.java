@@ -1,10 +1,16 @@
 package com.user.homedeco;
 
+import com.user.homedeco.exceptions.EmptyFieldException;
+import com.user.homedeco.exceptions.UsernameNotAvailable;
+import com.user.homedeco.services.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -12,6 +18,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.animation.Animation;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +47,9 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField lastnameTextfield;
     @FXML
-    private TextField usernameTextfield;
+    private TextField emailTextfield;
+    @FXML
+    private Button returnSignin;
 
     public void closeButtonOnAction(ActionEvent event){
         Stage stage = (Stage) closeButton.getScene().getWindow();
@@ -47,43 +57,38 @@ public class RegisterController implements Initializable {
         Platform.exit();
     }
 
-    public void registerButtonOnAction(ActionEvent event){
-        if(setPasswordField.getText().equals(confirmPasswordField.getText())){
-            registerUser();
-            confirmPasswordLabel.setText("");
+    public void registerButtonOnAction(ActionEvent event) throws IOException{
 
-        }else{
-            confirmPasswordLabel.setText("Password does not match");
-            new animatefx.animation.Shake(confirmPasswordField).play();
-            new animatefx.animation.Shake(setPasswordField).play();
+        try{
+            User.addUserClient(firstnameTextfield.getText(),lastnameTextfield.getText(),emailTextfield.getText(),setPasswordField.getText());
+
+
+        }
+        catch(EmptyFieldException | UsernameNotAvailable e){
+            registrationMessageLabel.setText(e.getMessage());
         }
 
     }
 
-    public void registerUser(){
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
+    public void returnSigninOnAction(ActionEvent event) throws IOException{
+        signinForm();
 
-        String firstname = firstnameTextfield.getText();
-        String lastname = lastnameTextfield.getText();
-        String username = usernameTextfield.getText();
-        String password = setPasswordField.getText();
+    }
 
-        String insertFields = "INSERT INTO user_account(firstname, lastname, username, password) VALUES ('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "')";
-        String insertToRegister = insertFields + insertValues;
-
+    public void signinForm(){
         try{
-        Statement statement = connectDB.createStatement();
-        statement.executeUpdate(insertToRegister);
-        registrationMessageLabel.setText("User registered successfully!");
+            Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            // registerStage.setTitle("Application");
+            registerStage.setScene(new Scene(root, 818, 484));
+            registerStage.show();
         }catch (Exception e){
             e.printStackTrace();
             e.getCause();
         }
-
-
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

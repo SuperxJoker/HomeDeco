@@ -16,9 +16,9 @@ public class UserLogin extends Application {
     @Override
             public void start(Stage primaryStage) throws Exception{
              Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
-             //primaryStage.initStyle(StageStyle.UNDECORATED);
-             primaryStage.setTitle("Application");
-             primaryStage.setScene(new Scene(root, 600, 400));
+             primaryStage.initStyle(StageStyle.UNDECORATED);
+             //primaryStage.setTitle("Application");
+             primaryStage.setScene(new Scene(root, 818, 484));
              primaryStage.show();
 
     }

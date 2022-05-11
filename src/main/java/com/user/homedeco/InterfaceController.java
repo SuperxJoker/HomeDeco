@@ -1,5 +1,6 @@
 package com.user.homedeco;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -35,6 +36,8 @@ public class InterfaceController implements Initializable {
     private PasswordField password;
     @FXML
     private Button createButton;
+    @FXML
+    private Button closeLogin;
 
     public InterfaceController() {
     }
@@ -44,6 +47,11 @@ public class InterfaceController implements Initializable {
     }
     public void createAccount(ActionEvent event) throws IOException{
         createAccountForm();
+    }
+    public void closeLoginOnAction(ActionEvent event){
+        Stage stage = (Stage) closeLogin.getScene().getWindow();
+        stage.close();
+        Platform.exit();
     }
 
     private void checkLogin() throws IOException{
@@ -94,7 +102,7 @@ public class InterfaceController implements Initializable {
             Stage registerStage = new Stage();
             registerStage.initStyle(StageStyle.UNDECORATED);
            // registerStage.setTitle("Application");
-            registerStage.setScene(new Scene(root, 600, 461));
+            registerStage.setScene(new Scene(root, 818, 484));
             registerStage.show();
         }catch (Exception e){
             e.printStackTrace();
