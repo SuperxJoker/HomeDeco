@@ -1,11 +1,14 @@
 package com.user.homedeco;
 
+import com.user.homedeco.exceptions.IncorrectMailOrPassword;
+import com.user.homedeco.services.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -39,12 +42,11 @@ public class InterfaceController implements Initializable {
     @FXML
     private Button closeLogin;
 
+    public static String email;
+
     public InterfaceController() {
     }
 
-    public void userLogin(ActionEvent event) throws IOException {
-        checkLogin();
-    }
     public void createAccount(ActionEvent event) throws IOException{
         createAccountForm();
     }
@@ -54,46 +56,31 @@ public class InterfaceController implements Initializable {
         Platform.exit();
     }
 
-    private void checkLogin() throws IOException{
-        if (!username.getText().isBlank() && !password.getText().isBlank()){
-            validateLogin();
-        } else{
-            wrongLogIn.setTextFill(Color.PURPLE);
-            wrongLogIn.setText("Please enter username and password");
-            new animatefx.animation.Shake(username).play();
-            new animatefx.animation.Shake(password).play();
-
-        }
-    }
-    public void validateLogin(){
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
-
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + username.getText() + "' AND password = '" + password.getText() + "'";
+    public void handleLoginButtonAction(ActionEvent event) throws IOException {
 
         try{
-            Statement statement = connectDB.createStatement();
-            ResultSet queryResult = statement.executeQuery(verifyLogin);
+            if((User.loginCheckClient(username.getText(),password.getText()).equals("Client"))){
+                Parent home_page_parent = FXMLLoader.load(getClass().getResource("HomeScreenClient.fxml"));
+                Stage home_page_scene = new Stage();
+                home_page_scene.setScene(new Scene(home_page_parent, 818, 484));
+                home_page_scene.show();
+                email=username.getText();
+            } else if(username.getText().equals("admin@homedecor.com") && password.getText().equals("adminHome")){
+                Parent home_admin_parent = FXMLLoader.load(getClass().getResource("HomeScreenAdmin.fxml"));
+                Stage home_admin_scene = new Stage();
+                home_admin_scene.setScene(new Scene(home_admin_parent, 818, 484));
+                home_admin_scene.show();
 
-            while(queryResult.next()){
-                if(queryResult.getInt(1) == 1){
-                    wrongLogIn.setTextFill(Color.GREEN);
-                    wrongLogIn.setText("Success!");
-
-                }else{
-                    wrongLogIn.setTextFill(Color.RED);
-                    wrongLogIn.setText("Wrong username or password!");
-                    new animatefx.animation.Shake(username).play();
-                    new animatefx.animation.Shake(password).play();
-
-                }
-
+            }else
+            {
+                User.checkIncorrect();
             }
 
-        }catch (Exception e){
-            e.printStackTrace();
-            e.getCause();
+            } catch (IncorrectMailOrPassword e) {
+               wrongLogIn.setText(e.getMessage());
         }
+
+
     }
 
     public void createAccountForm(){
@@ -112,16 +99,8 @@ public class InterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loginButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    userLogin(event);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+
+        }
 
     }
-}
+
