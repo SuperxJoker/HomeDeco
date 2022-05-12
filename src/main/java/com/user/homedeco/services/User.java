@@ -21,6 +21,7 @@ public class User {
     public static String key = "Jar12345Jar12345";
     public static String initVector = "RandomInitVector";
 
+    //adds clients in json file:usersClients
     public static void addUserClient(String firstName, String lastName, String email, String password) throws EmptyFieldException, UsernameNotAvailable {
 
        checkIfFieldsAreEmptyClient(firstName,lastName,email,password);
@@ -71,12 +72,14 @@ public class User {
 
     }
 
+    //check for empty fields
     private static void checkIfFieldsAreEmptyClient(String firstName, String lastName, String username, String password) throws EmptyFieldException {
 
         if (firstName.isEmpty() | lastName.isEmpty() | username.isEmpty() | password.isEmpty())
             throw new EmptyFieldException();
     }
 
+    //encrypts clients passwords
     public static String encodePassword(String key, String initVector, String value)
     {
         try {
@@ -92,7 +95,9 @@ public class User {
         return null;
     }
 
+
     static boolean correctAccount = false;
+    //checks if the user exists in a json file
     public static String loginCheckClient(String email, String password)throws IncorrectMailOrPassword {
 
         JSONParser parser = new JSONParser();
@@ -130,6 +135,7 @@ public class User {
 
     }
 
+    //if there is no user in the files throws incorrect mail or pass
     public static void checkIncorrect()throws IncorrectMailOrPassword {
         if(!correctAccount)
         {

@@ -50,22 +50,28 @@ public class InterfaceController implements Initializable {
     public void createAccount(ActionEvent event) throws IOException{
         createAccountForm();
     }
+    //close button
     public void closeLoginOnAction(ActionEvent event){
         Stage stage = (Stage) closeLogin.getScene().getWindow();
         stage.close();
         Platform.exit();
     }
 
+    //login data verifying, on button action
     public void handleLoginButtonAction(ActionEvent event) throws IOException {
 
         try{
+            //verify if the user is client
             if((User.loginCheckClient(username.getText(),password.getText()).equals("Client"))){
+                //switch to home screen client
                 Parent home_page_parent = FXMLLoader.load(getClass().getResource("HomeScreenClient.fxml"));
                 Stage home_page_scene = new Stage();
                 home_page_scene.setScene(new Scene(home_page_parent, 818, 484));
                 home_page_scene.show();
                 email=username.getText();
+                //verify if the user is the admin
             } else if(username.getText().equals("admin@homedecor.com") && password.getText().equals("adminHome")){
+                //switch to home screen admin
                 Parent home_admin_parent = FXMLLoader.load(getClass().getResource("HomeScreenAdmin.fxml"));
                 Stage home_admin_scene = new Stage();
                 home_admin_scene.setScene(new Scene(home_admin_parent, 818, 484));
@@ -73,16 +79,19 @@ public class InterfaceController implements Initializable {
 
             }else
             {
+                //if the user is none of the above throw exception
                 User.checkIncorrect();
             }
 
             } catch (IncorrectMailOrPassword e) {
+            //error if not all fields are completed
                wrongLogIn.setText(e.getMessage());
         }
 
 
     }
 
+    //display register stage
     public void createAccountForm(){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("Register.fxml"));

@@ -51,6 +51,7 @@ public class RegisterController implements Initializable {
     @FXML
     private Button returnSignin;
 
+    //close button
     public void closeButtonOnAction(ActionEvent event){
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
@@ -61,16 +62,19 @@ public class RegisterController implements Initializable {
 
         try{
             User.addUserClient(firstnameTextfield.getText(),lastnameTextfield.getText(),emailTextfield.getText(),setPasswordField.getText());
+            //Load the Home Page for client
             homepageClient();
 
 
         }
         catch(EmptyFieldException | UsernameNotAvailable e){
+            //error if not all fields are completed
             registrationMessageLabel.setText(e.getMessage());
         }
 
     }
 
+    //return to sign in form if you already have an account
     public void returnSigninOnAction(ActionEvent event) throws IOException{
         signinForm();
 
@@ -81,7 +85,6 @@ public class RegisterController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
             Stage registerStage = new Stage();
             registerStage.initStyle(StageStyle.UNDECORATED);
-            // registerStage.setTitle("Application");
             registerStage.setScene(new Scene(root, 818, 484));
             registerStage.show();
         }catch (Exception e){
@@ -89,6 +92,8 @@ public class RegisterController implements Initializable {
             e.getCause();
         }
     }
+
+    //home page opener
     public void homepageClient(){
         try{
             Parent home_page_parent = FXMLLoader.load(getClass().getResource("HomeScreenClient.fxml"));
