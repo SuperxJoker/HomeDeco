@@ -1,5 +1,6 @@
 package com.user.homedeco;
 
+import com.user.homedeco.exceptions.EmptyFieldException;
 import com.user.homedeco.exceptions.IncorrectMailOrPassword;
 import com.user.homedeco.services.User;
 import javafx.application.Platform;
@@ -83,7 +84,7 @@ public class InterfaceController implements Initializable {
                 User.checkIncorrect();
             }
 
-            } catch (IncorrectMailOrPassword e) {
+            } catch (IncorrectMailOrPassword  e) {
             //error if not all fields are completed
                wrongLogIn.setText(e.getMessage());
         }
