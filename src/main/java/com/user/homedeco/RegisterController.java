@@ -61,6 +61,7 @@ public class RegisterController implements Initializable {
 
         try{
             User.addUserClient(firstnameTextfield.getText(),lastnameTextfield.getText(),emailTextfield.getText(),setPasswordField.getText());
+            homepageClient();
 
 
         }
@@ -84,6 +85,18 @@ public class RegisterController implements Initializable {
             registerStage.setScene(new Scene(root, 818, 484));
             registerStage.show();
         }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+    public void homepageClient(){
+        try{
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("HomeScreenClient.fxml"));
+            Stage home_page_scene = new Stage();
+            home_page_scene.setScene(new Scene(home_page_parent, 818, 484));
+            home_page_scene.show();
+
+        }catch(IOException e){
             e.printStackTrace();
             e.getCause();
         }
