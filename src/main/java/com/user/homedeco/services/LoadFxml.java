@@ -1,4 +1,4 @@
-package com.user.homedeco;
+package com.user.homedeco.services;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;

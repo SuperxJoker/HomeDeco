@@ -9,17 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" style="-fx-background-color: 8369;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.HomeScreenClientController">
-   <right>
-      <Pane prefHeight="484.0" prefWidth="613.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="closeButton" layoutX="574.0" mnemonicParsing="false" onAction="#closeButtonOnAction" style="-fx-background-color: transparent;" text="x">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Button>
-         </children></Pane>
-   </right>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" style="-fx-background-color: 8369;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.HomeScreenClientController">
    <left>
       <AnchorPane prefHeight="484.0" prefWidth="206.0" style="-fx-background-color: #F8DCC1;" BorderPane.alignment="CENTER">
          <children>
@@ -38,12 +28,138 @@
                   <Image url="@images/iconcatnobg.png" />
                </image>
             </ImageView>
-            <Label layoutX="-5.0" layoutY="120.0" prefHeight="53.0" prefWidth="213.0" style="-fx-background-color: #C1D8F8;" text="           NAVIGATION" textAlignment="CENTER" textOverrun="CLIP">
+            <Label layoutX="-5.0" layoutY="116.0" prefHeight="53.0" prefWidth="215.0" style="-fx-background-color: #C1D8F8;" text="           NAVIGATION" textAlignment="CENTER" textOverrun="CLIP">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Label>
+            <Button id="homeScreenBtn" fx:id="homePageButton" layoutX="-3.0" layoutY="167.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Home Screen">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="shopBtn" fx:id="homePageButton1" layoutX="-3.0" layoutY="220.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Shop">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="myCartBtn" fx:id="homePageButton11" layoutX="-3.0" layoutY="273.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="My cart">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="reviewBtn" fx:id="homePageButton111" layoutX="-3.0" layoutY="327.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Review">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="historyBtn" fx:id="homePageButton1111" layoutX="-3.0" layoutY="381.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Purchase history">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="helpBtn" fx:id="homePageButton11111" layoutX="-3.0" layoutY="431.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Client service">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
+   <right>
+      <AnchorPane prefHeight="484.0" prefWidth="615.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="484.0" fitWidth="615.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/b14.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="140.0" layoutY="107.0" text="Make your house" textFill="#a47551">
+               <font>
+                  <Font name="Serif Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="257.0" layoutY="135.0" text="feel like home." textFill="#a47551">
+               <font>
+                  <Font name="Serif Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="31.0" layoutY="207.0" prefHeight="230.0" prefWidth="172.0" style="-fx-background-color: #C1D8F8; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="24.0" layoutY="33.0" text="Online shopping">
+                     <font>
+                        <Font name="Serif Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="76.0" />
+                  <Label layoutX="15.0" layoutY="93.0" text="Select the items that you ">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="115.0" text="like the most and give">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="137.0" text="your house a small gift.">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="227.0" layoutY="207.0" prefHeight="230.0" prefWidth="172.0" style="-fx-background-color: #C1D8F8; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="31.0" layoutY="34.0" text="Rate our items">
+                     <font>
+                        <Font name="Serif Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="61.0" />
+                  <Label layoutX="14.0" layoutY="94.0" text="You can review all the">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="115.0" text="items that you purchased.">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="422.0" layoutY="207.0" prefHeight="230.0" prefWidth="172.0" style="-fx-background-color: #C1D8F8; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="40.0" layoutY="33.0" text="Ask for help">
+                     <font>
+                        <Font name="Serif Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="61.0" />
+                  <Label layoutX="19.0" layoutY="94.0" text="You can contact client">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="113.0" text="services in case of a">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="132.0" text="problem.">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="closeButton" layoutX="564.0" mnemonicParsing="false" onAction="#closeButtonOnAction" style="-fx-background-color: transparent;" text="x">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
 </BorderPane>
