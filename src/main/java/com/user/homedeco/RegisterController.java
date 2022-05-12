@@ -98,6 +98,7 @@ public class RegisterController implements Initializable {
         try{
             Parent home_page_parent = FXMLLoader.load(getClass().getResource("HomeScreenClient.fxml"));
             Stage home_page_scene = new Stage();
+            home_page_scene.initStyle(StageStyle.UNDECORATED);
             home_page_scene.setScene(new Scene(home_page_parent, 818, 484));
             home_page_scene.show();
 
