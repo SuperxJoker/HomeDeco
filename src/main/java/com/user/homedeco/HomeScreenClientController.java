@@ -7,14 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,6 +34,12 @@ public class HomeScreenClientController implements Initializable {
     private Button shopButton;
     @FXML
     private Button cartButton;
+    @FXML
+    private Button reviewButton;
+    @FXML
+    private Button historyButton;
+    @FXML
+    private Button helpButton;
 
 
     public void closeButtonOnAction(ActionEvent event){
@@ -52,14 +56,25 @@ public class HomeScreenClientController implements Initializable {
     }
 
     public void shopButtonOnAction(ActionEvent event) throws IOException{
-        /*Node node;
-        node = (Node)FXMLLoader.load(getClass().getResource("ShopScreenClient.fxml"));
-        home.getChildren().setAll(node);*/
+
         getPage("ShopScreenClient");
 
     }
     public void cartButtonOnAction(ActionEvent event) throws IOException{
         getPage("CartScreenClient");
+
+    }
+    public void reviewButtonOnAction(ActionEvent event) throws IOException{
+        getPage("ReviewScreenClient");
+
+    }
+    public void historyButtonOnAction(ActionEvent event) throws IOException{
+        getPage("HistoryScreenClient");
+
+    }
+
+    public void helpButtonOnAction(ActionEvent event) throws IOException{
+        getPage("HelpScreenClient");
 
     }
 

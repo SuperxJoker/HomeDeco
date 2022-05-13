@@ -28,37 +28,37 @@
                   <Image url="@images/iconcatnobg.png" />
                </image>
             </ImageView>
-            <Label layoutX="-5.0" layoutY="116.0" prefHeight="53.0" prefWidth="215.0" style="-fx-background-color: #C1D8F8;" text="           NAVIGATION" textAlignment="CENTER" textOverrun="CLIP">
+            <Label layoutX="-5.0" layoutY="117.0" prefHeight="53.0" prefWidth="215.0" style="-fx-background-color: #C1D8F8;" text="           NAVIGATION" textAlignment="CENTER" textOverrun="CLIP">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Label>
-            <Button id="homeScreenBtn" fx:id="homePageButton" layoutX="-3.0" layoutY="167.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Home Screen">
+            <Button id="homeScreenBtn" fx:id="homePageButton" layoutX="-3.0" layoutY="168.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Home Screen">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Button>
-            <Button id="shopBtn" fx:id="shopButton" layoutX="-3.0" layoutY="220.0" mnemonicParsing="false" onAction="#shopButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Shop">
+            <Button id="shopBtn" fx:id="shopButton" layoutX="-3.0" layoutY="221.0" mnemonicParsing="false" onAction="#shopButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Shop">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Button>
-            <Button id="myCartBtn" fx:id="cartButton" layoutX="-3.0" layoutY="273.0" mnemonicParsing="false" onAction="#cartButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="My cart">
+            <Button id="myCartBtn" fx:id="cartButton" layoutX="-3.0" layoutY="274.0" mnemonicParsing="false" onAction="#cartButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="My cart">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Button>
-            <Button id="reviewBtn" fx:id="homePageButton111" layoutX="-3.0" layoutY="326.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Review">
+            <Button id="reviewBtn" fx:id="reviewButton" layoutX="-3.0" layoutY="327.0" mnemonicParsing="false" onAction="#reviewButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Review">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Button>
-            <Button id="historyBtn" fx:id="homePageButton1111" layoutX="-3.0" layoutY="380.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Purchase history">
+            <Button id="historyBtn" fx:id="historyButton" layoutX="-3.0" layoutY="381.0" mnemonicParsing="false" onAction="#historyButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Purchase history">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
             </Button>
-            <Button id="helpBtn" fx:id="homePageButton11111" layoutX="-3.0" layoutY="430.0" mnemonicParsing="false" onAction="#homeScreenButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Client service">
+            <Button id="helpBtn" fx:id="helpButton" layoutX="-3.0" layoutY="431.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="53.0" prefWidth="213.0" stylesheets="@cssfiles/homepagebuttons.css" text="Client service">
                <font>
                   <Font name="Serif Bold" size="18.0" />
                </font>
