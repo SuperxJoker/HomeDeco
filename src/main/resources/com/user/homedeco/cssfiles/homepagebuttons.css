@@ -1,0 +1,54 @@
+#homeScreenBtn{
+    -fx-background-color: #C1CFF8;
+}
+#homeScreenBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+#shopBtn{
+    -fx-background-color: #C1C6F8;
+}
+#shopBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+#myCartBtn{
+    -fx-background-color: #C5C1F8;
+}
+#myCartBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+#reviewBtn{
+    -fx-background-color: #CEC1F8;
+}
+#reviewBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+#historyBtn{
+    -fx-background-color: #D7C1F8;
+}
+#historyBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+#helpBtn{
+    -fx-background-color: #E0C1F8;
+}
+#helpBtn:hover{
+    -fx-text-fill: #FFF;
+    -fx-background-color: #283847;
+}
+
+
+
+
+
+
+
