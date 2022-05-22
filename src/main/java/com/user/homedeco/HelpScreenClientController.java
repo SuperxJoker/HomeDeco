@@ -2,13 +2,15 @@ package com.user.homedeco;
 
 import com.user.homedeco.exceptions.EmptyFieldException;
 import com.user.homedeco.exceptions.TitleNotAvailable;
-import com.user.homedeco.exceptions.UsernameNotAvailable;
-import com.user.homedeco.services.User;
+import com.user.homedeco.model.Forum;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,17 +19,26 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class HelpScreenClientController implements Initializable {
+public class HelpScreenClientController {
 
     @FXML
     private Button closeButton;
     @FXML
     private Button submit;
     @FXML
-    private TableView<String> forum;
+    private TableView<Forum> forum;
+    @FXML
+    private TableColumn<Forum,String> titleKey;
+    @FXML
+    private TableColumn<Forum,String> questionKey;
+    @FXML
+    private TableColumn<Forum,String> answerKey;
     @FXML
     private TextField titlePost;
     @FXML
@@ -35,6 +46,16 @@ public class HelpScreenClientController implements Initializable {
     @FXML
     private Label wrongLabel;
 
+    private static JSONArray arrayQuestion;
+
+
+    @FXML
+    public void initialize() {
+        titleKey.setCellValueFactory(new PropertyValueFactory<>("titleKey"));
+        questionKey.setCellValueFactory(new PropertyValueFactory<>("questionKey"));
+        answerKey.setCellValueFactory(new PropertyValueFactory<>("answerKey"));
+
+    }
 
 
     public static void addForumQuestion(String title,String question) throws TitleNotAvailable, EmptyFieldException {
@@ -42,7 +63,7 @@ public class HelpScreenClientController implements Initializable {
         checkIfFieldsAreEmptyClient(title,question);
 
         JSONObject obj = new JSONObject();
-        JSONArray arrayQuestion = new JSONArray();
+        arrayQuestion = new JSONArray();
         JSONParser jp = new JSONParser();
         Object p;
         try {
@@ -70,6 +91,8 @@ public class HelpScreenClientController implements Initializable {
         JSONArray array= new JSONArray();
         obj.put("Title:", title);
         obj.put("Question:", question);
+        obj.put("Answer:", null);
+
 
         arrayQuestion.add(obj);
 
@@ -94,18 +117,29 @@ public class HelpScreenClientController implements Initializable {
     }
 
     public void submitButtonOnAction(ActionEvent event) throws IOException{
+
         try{
             addForumQuestion(titlePost.getText(),questionPost.getText());
-            //Load the Home Page for client
+           // forum.getColumns().addAll(titleKey,questionKey);
+          //  titleKey.setCellValueFactory(c -> c.getValue().getTitleKey());
+           // new Forum(titlePost.getText(),questionPost.getText(),null);
 
 
+            ObservableList<Forum> items = FXCollections.observableArrayList();
+
+            for (Object forum_entry : arrayQuestion) {
+                items.add((Forum) forum_entry);
+                forum.setItems(items);
+            }
         }
+        //error if not all fields are completed
         catch(EmptyFieldException | TitleNotAvailable e){
-            //error if not all fields are completed
             wrongLabel.setText(e.getMessage());
         }
 
     }
+
+
 
 
     public void closeButtonOnAction(ActionEvent event){
@@ -114,8 +148,4 @@ public class HelpScreenClientController implements Initializable {
         Platform.exit();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }
