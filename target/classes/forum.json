@@ -9,9 +9,13 @@
 }, {
   "titleKey" : "title2",
   "questionKey" : "question2",
-  "answerKey" : "null"
+  "answerKey" : "Not answered"
 }, {
   "titleKey" : "yes",
   "questionKey" : "no",
-  "answerKey" : "null"
+  "answerKey" : "Not answered"
+}, {
+  "titleKey" : "Trouble ordering",
+  "questionKey" : "How can I order?",
+  "answerKey" : "Not answered"
 } ]

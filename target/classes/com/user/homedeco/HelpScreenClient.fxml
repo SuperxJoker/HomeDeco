@@ -8,28 +8,50 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.HelpScreenClientController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" style="-fx-background-color: #E0C1F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.HelpScreenClientController">
    <children>
-      <Label layoutX="432.0" layoutY="12.0" prefHeight="31.0" prefWidth="65.0" text="HELP">
+      <Button id="submitBtn" fx:id="submit" layoutX="465.0" layoutY="345.0" mnemonicParsing="false" onAction="#submitButtonOnAction" prefHeight="36.0" prefWidth="110.0" stylesheets="@cssfiles/homepagebuttons.css" text="Submit">
          <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Button fx:id="closeButton" layoutX="557.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="26.0" prefWidth="25.0" text="X">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="submit" layoutX="479.0" layoutY="239.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
-      <TableView fx:id="forum" prefHeight="400.0" prefWidth="406.0">
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font></Button>
+      <TableView fx:id="forum" layoutX="14.0" layoutY="88.0" prefHeight="378.0" prefWidth="398.0" style="-fx-background-color: transparent;">
         <columns>
-          <TableColumn fx:id="titleField" prefWidth="136.0" text="Title" />
-          <TableColumn fx:id="questionField" prefWidth="134.0" text="Question" />
-            <TableColumn fx:id="answerField" prefWidth="135.0" text="Answer" />
+          <TableColumn fx:id="titleField" prefWidth="136.0" style="-fx-font-family: Serif; -fx-font-size: 17; -fx-background-color: #eedcfc;" text="Title" />
+          <TableColumn fx:id="questionField" prefWidth="134.0" style="-fx-font-family: Serif; -fx-font-size: 17; -fx-background-color: #eedcfc;" text="Question" />
+            <TableColumn fx:id="answerField" prefWidth="135.0" style="-fx-font-family: Serif; -fx-font-size: 17; -fx-background-color: #eedcfc;" text="Answer" />
         </columns>
       </TableView>
-      <TextField fx:id="titlePost" layoutX="417.0" layoutY="91.0" prefHeight="36.0" prefWidth="161.0" promptText="title" />
-      <TextField fx:id="questionPost" layoutX="417.0" layoutY="164.0" prefHeight="36.0" prefWidth="161.0" promptText="question" />
-      <Label fx:id="wrongLabel" layoutX="410.0" layoutY="283.0" prefHeight="44.0" prefWidth="168.0" />
+      <TextField fx:id="titlePost" layoutX="439.0" layoutY="202.0" prefHeight="36.0" prefWidth="161.0" promptText="Title" style="-fx-border-color: #c28aed; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font name="Serif Bold" size="15.0" />
+         </font></TextField>
+      <TextField fx:id="questionPost" layoutX="439.0" layoutY="271.0" prefHeight="36.0" prefWidth="161.0" promptText="Question" style="-fx-border-color: #c28aed; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font name="Serif Bold" size="15.0" />
+         </font></TextField>
+      <Label fx:id="wrongLabel" layoutX="427.0" layoutY="99.0" prefHeight="36.0" prefWidth="175.0" textFill="#ff2929">
+         <font>
+            <Font name="Serif Regular" size="18.0" />
+         </font></Label>
+      <Label layoutX="439.0" layoutY="174.0" prefHeight="18.0" prefWidth="139.0" text="Title of your post">
+         <font>
+            <Font name="Serif Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="245.0" prefHeight="18.0" prefWidth="139.0" text="Your question">
+         <font>
+            <Font name="Serif Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutY="30.0" prefHeight="44.0" prefWidth="615.0" style="-fx-background-color: white;" text="                 Welcome to Client Service page" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Italic" size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="581.0" layoutY="-8.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="36.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="x">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
