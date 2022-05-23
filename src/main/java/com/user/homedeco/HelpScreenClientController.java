@@ -1,5 +1,8 @@
 package com.user.homedeco;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.user.homedeco.exceptions.CouldNotWriteForumException;
 import com.user.homedeco.exceptions.EmptyFieldException;
 import com.user.homedeco.exceptions.TitleNotAvailable;
 import com.user.homedeco.model.Forum;
@@ -8,22 +11,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
+import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class HelpScreenClientController {
 
@@ -34,11 +34,11 @@ public class HelpScreenClientController {
     @FXML
     private TableView<Forum> forum;
     @FXML
-    private TableColumn<Forum,String> titleKey;
+    private TableColumn<Forum,String> titleField;
     @FXML
-    private TableColumn<Forum,String> questionKey;
+    private TableColumn<Forum,String> questionField;
     @FXML
-    private TableColumn<Forum,String> answerKey;
+    private TableColumn<Forum,String> answerField;
     @FXML
     private TextField titlePost;
     @FXML
@@ -46,65 +46,56 @@ public class HelpScreenClientController {
     @FXML
     private Label wrongLabel;
 
-    private static JSONArray arrayQuestion;
+    private static List<Forum> arrayQuestion;
+    public static String forumLocation = "src/main/resources/forum.json";
+    public static Path forumPath = Paths.get(forumLocation);
+    ObservableList<Forum> items = FXCollections.observableArrayList();
+
 
 
     @FXML
     public void initialize() {
-        titleKey.setCellValueFactory(new PropertyValueFactory<>("titleKey"));
-        questionKey.setCellValueFactory(new PropertyValueFactory<>("questionKey"));
-        answerKey.setCellValueFactory(new PropertyValueFactory<>("answerKey"));
+        titleField.setCellValueFactory(new PropertyValueFactory<>("TitleKey"));
+        questionField.setCellValueFactory(new PropertyValueFactory<>("QuestionKey"));
+        answerField.setCellValueFactory(new PropertyValueFactory<>("AnswerKey"));
+
+        if (arrayQuestion != null) {
+            for (Forum object : arrayQuestion) {
+                items.add(object);
+                forum.setItems(items);
+            }
+        }
 
     }
 
+    public static void loadForum() throws IOException {
+        if (!Files.exists(forumPath)) {
+            FileUtils.copyURLToFile(Objects.requireNonNull(HelpScreenClientController.class.getClassLoader().getResource("src/main/resources/forum.json")), forumPath.toFile());
+        }
 
-    public static void addForumQuestion(String title,String question) throws TitleNotAvailable, EmptyFieldException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        arrayQuestion = objectMapper.readValue(forumPath.toFile(), new TypeReference<>() {
+        });
+    }
+
+    public static void addForumQuestion(String title,String question) throws TitleNotAvailable, EmptyFieldException, CouldNotWriteForumException {
 
         checkIfFieldsAreEmptyClient(title,question);
 
-        JSONObject obj = new JSONObject();
-        arrayQuestion = new JSONArray();
-        JSONParser jp = new JSONParser();
-        Object p;
-        try {
-            FileReader readFile = new FileReader("src/main/resources/forum.json");
-            BufferedReader read = new BufferedReader(readFile);
-            p = jp.parse(read);
-            if (p instanceof JSONArray) {
-                arrayQuestion = (JSONArray) p;
+
+        if (arrayQuestion != null) {
+            Iterator<Forum> iterator = arrayQuestion.iterator();
+            while (iterator.hasNext()) {
+                Forum obj2 = iterator.next();
+                if (Objects.equals(obj2.getTitleKey(), title)) {
+                    throw new TitleNotAvailable();
+                }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
         }
-        Iterator<JSONObject> iterator = arrayQuestion.iterator();
-        while (iterator.hasNext())
-        {
-            JSONObject obj2 = iterator.next();
-            if (obj2.get("Title:").equals(title))
-            {
-                throw new TitleNotAvailable();
-            }
 
-        }
-        JSONArray array= new JSONArray();
-        obj.put("Title:", title);
-        obj.put("Question:", question);
-        obj.put("Answer:", null);
-
-
-        arrayQuestion.add(obj);
-
-        try {
-            File file = new File("src/main/resources/forum.json");
-            FileWriter fisier = new FileWriter(file.getAbsoluteFile());
-            fisier.write(arrayQuestion.toJSONString());
-            fisier.flush();
-            fisier.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        arrayQuestion.add(new Forum(title, question, "null"));
+        persistForum();
+        //System.out.println(arrayQuestion);
 
 
     }
@@ -120,32 +111,35 @@ public class HelpScreenClientController {
 
         try{
             addForumQuestion(titlePost.getText(),questionPost.getText());
-           // forum.getColumns().addAll(titleKey,questionKey);
-          //  titleKey.setCellValueFactory(c -> c.getValue().getTitleKey());
-           // new Forum(titlePost.getText(),questionPost.getText(),null);
-
-
             ObservableList<Forum> items = FXCollections.observableArrayList();
 
-            for (Object forum_entry : arrayQuestion) {
-                items.add((Forum) forum_entry);
+            for (Forum forum_entry : arrayQuestion) {
+                items.add(forum_entry);
                 forum.setItems(items);
             }
-        }
-        //error if not all fields are completed
-        catch(EmptyFieldException | TitleNotAvailable e){
+        } catch(EmptyFieldException e){
+            wrongLabel.setText(e.getMessage());
+        } catch (TitleNotAvailable e) {
+            wrongLabel.setText(e.getMessage());
+        } catch(CouldNotWriteForumException e) {
             wrongLabel.setText(e.getMessage());
         }
-
     }
-
-
 
 
     public void closeButtonOnAction(ActionEvent event){
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
         Platform.exit();
+    }
+
+    public static void persistForum() throws CouldNotWriteForumException {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(forumPath.toFile(), arrayQuestion);
+        } catch (IOException e) {
+            throw new CouldNotWriteForumException();
+        }
     }
 
 }

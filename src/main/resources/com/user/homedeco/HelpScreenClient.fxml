@@ -23,9 +23,9 @@
       <Button fx:id="submit" layoutX="503.0" layoutY="248.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
       <TableView fx:id="forum" prefHeight="400.0" prefWidth="406.0">
         <columns>
-          <TableColumn fx:id="titleKey" prefWidth="136.0" text="Title" />
-          <TableColumn fx:id="questionKey" prefWidth="134.0" text="Question" />
-            <TableColumn fx:id="answerKey" prefWidth="135.0" text="Answer" />
+          <TableColumn fx:id="titleField" prefWidth="136.0" text="Title" />
+          <TableColumn fx:id="questionField" prefWidth="134.0" text="Question" />
+            <TableColumn fx:id="answerField" prefWidth="135.0" text="Answer" />
         </columns>
       </TableView>
       <TextField fx:id="titlePost" layoutX="417.0" layoutY="91.0" prefHeight="36.0" prefWidth="161.0" promptText="title" />

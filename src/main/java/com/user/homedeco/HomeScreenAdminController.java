@@ -60,7 +60,7 @@ public class HomeScreenAdminController implements Initializable {
     }
 
     public void clientServiceButtonOnAction(ActionEvent event) throws IOException{
-        getPage("HistoryScreenClient");
+        getPage("TestAdminForum");
 
     }
 

@@ -15,6 +15,7 @@ import java.io.IOException;
 public class UserLogin extends Application {
     @Override
             public void start(Stage primaryStage) throws Exception{
+             HelpScreenClientController.loadForum();
              Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
              primaryStage.initStyle(StageStyle.UNDECORATED);
              //primaryStage.setTitle("Application");
