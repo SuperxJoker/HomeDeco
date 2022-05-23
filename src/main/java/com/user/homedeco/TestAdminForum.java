@@ -86,12 +86,9 @@ public class TestAdminForum {
             Iterator<Forum> iterator = arrayQuestion.iterator();
             while (iterator.hasNext()) {
                 Forum obj2 = iterator.next();
-                if (Objects.equals(obj2.getTitleKey(), title) && Objects.equals(obj2.getAnswerKey(),"Not answered")) {
+                if (Objects.equals(obj2.getTitleKey(), title)) {
                     obj2.setAnswerKey(answer);
 
-                }
-                else{
-                    throw new CouldNotAnswerException();
                 }
             }
         }
