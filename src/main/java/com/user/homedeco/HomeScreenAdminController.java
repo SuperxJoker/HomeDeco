@@ -33,6 +33,8 @@ public class HomeScreenAdminController implements Initializable {
     private Button clientServiceButton;
     @FXML
     private Button ordersButton;
+    @FXML
+    private Button reviewsButton;
 
 
 
@@ -61,6 +63,11 @@ public class HomeScreenAdminController implements Initializable {
 
     public void clientServiceButtonOnAction(ActionEvent event) throws IOException{
         getPage("TestAdminForum");
+
+    }
+
+    public void reviewsButtonOnAction(ActionEvent event) throws IOException{
+        getPage("ReviewScreenAdmin");
 
     }
 

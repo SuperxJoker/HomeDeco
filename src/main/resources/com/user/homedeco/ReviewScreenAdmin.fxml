@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" style="-fx-background-color: #D7C1F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ReviewScreenAdminController">
+   <children>
+      <Button fx:id="closeButton" layoutX="582.0" layoutY="-8.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: transparent;" text="x">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <TableView fx:id="review" layoutX="58.0" layoutY="84.0" prefHeight="364.0" prefWidth="499.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="clientField" prefWidth="207.0" style="-fx-font-family: Serif; -fx-font-size: 17; -fx-background-color: #eedcfc;" text="Clients" />
+          <TableColumn fx:id="reviewField" minWidth="3.0" prefWidth="291.0" style="-fx-background-color: #eedcfc; -fx-font-family: Serif; -fx-font-size: 17;" text="Review" />
+        </columns>
+      </TableView>
+      <Label layoutY="27.0" prefHeight="44.0" prefWidth="615.0" style="-fx-background-color: white;" text="                            Clients' reviews" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Italic" size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

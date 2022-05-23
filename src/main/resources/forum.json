@@ -1,21 +1,13 @@
 [ {
-  "titleKey" : "title",
-  "questionKey" : "question",
-  "answerKey" : "yes"
-}, {
-  "titleKey" : "title1",
-  "questionKey" : "question1",
-  "answerKey" : "u cant"
-}, {
-  "titleKey" : "title2",
-  "questionKey" : "question2",
-  "answerKey" : "Not answered"
-}, {
-  "titleKey" : "yes",
-  "questionKey" : "no",
-  "answerKey" : "Not answered"
-}, {
   "titleKey" : "Trouble ordering",
   "questionKey" : "How can I order?",
+  "answerKey" : "Select buy items"
+}, {
+  "titleKey" : "Cart",
+  "questionKey" : "How I add to cart?",
+  "answerKey" : "Click item then add"
+}, {
+  "titleKey" : "Review",
+  "questionKey" : "How do i review?",
   "answerKey" : "Not answered"
 } ]

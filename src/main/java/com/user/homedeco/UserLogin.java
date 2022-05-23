@@ -17,6 +17,8 @@ public class UserLogin extends Application {
             public void start(Stage primaryStage) throws Exception{
              HelpScreenClientController.loadForum();
              TestAdminForum.loadForum();
+             ReviewScreenClientController.loadForum();
+             ReviewScreenAdminController.loadForum();
              Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
              primaryStage.initStyle(StageStyle.UNDECORATED);
              //primaryStage.setTitle("Application");
