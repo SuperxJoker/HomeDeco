@@ -20,7 +20,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="submit" layoutX="503.0" layoutY="248.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
+      <Button fx:id="submit" layoutX="479.0" layoutY="239.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
       <TableView fx:id="forum" prefHeight="400.0" prefWidth="406.0">
         <columns>
           <TableColumn fx:id="titleField" prefWidth="136.0" text="Title" />
@@ -30,6 +30,6 @@
       </TableView>
       <TextField fx:id="titlePost" layoutX="417.0" layoutY="91.0" prefHeight="36.0" prefWidth="161.0" promptText="title" />
       <TextField fx:id="questionPost" layoutX="417.0" layoutY="164.0" prefHeight="36.0" prefWidth="161.0" promptText="question" />
-      <Label fx:id="wrongLabel" layoutX="352.0" layoutY="260.0" prefHeight="31.0" prefWidth="226.0" />
+      <Label fx:id="wrongLabel" layoutX="410.0" layoutY="283.0" prefHeight="44.0" prefWidth="168.0" />
    </children>
 </AnchorPane>
