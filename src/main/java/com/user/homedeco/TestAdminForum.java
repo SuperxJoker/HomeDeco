@@ -2,6 +2,7 @@ package com.user.homedeco;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.user.homedeco.exceptions.CouldNotAnswerException;
 import com.user.homedeco.exceptions.CouldNotWriteForumException;
 import com.user.homedeco.exceptions.EmptyFieldException;
 import com.user.homedeco.exceptions.TitleNotAvailable;
@@ -78,16 +79,19 @@ public class TestAdminForum {
         });
     }
 
-    public static void addForumAnswer(String title, String answer) throws IOException, EmptyFieldException, CouldNotWriteForumException {
+    public static void addForumAnswer(String title, String answer) throws IOException, EmptyFieldException, CouldNotWriteForumException, CouldNotAnswerException {
         checkIfFieldsAreEmptyClient(title,answer);
 
         if (arrayQuestion != null) {
             Iterator<Forum> iterator = arrayQuestion.iterator();
             while (iterator.hasNext()) {
                 Forum obj2 = iterator.next();
-                if (Objects.equals(obj2.getTitleKey(), title)) {
+                if (Objects.equals(obj2.getTitleKey(), title) && Objects.equals(obj2.getAnswerKey(),"Not answered")) {
                     obj2.setAnswerKey(answer);
 
+                }
+                else{
+                    throw new CouldNotAnswerException();
                 }
             }
         }
@@ -109,7 +113,7 @@ public class TestAdminForum {
             }
         } catch(EmptyFieldException e){
             wrongLabel.setText(e.getMessage());
-        } catch(CouldNotWriteForumException e) {
+        } catch(CouldNotWriteForumException | CouldNotAnswerException e) {
             wrongLabel.setText(e.getMessage());
         }
     }

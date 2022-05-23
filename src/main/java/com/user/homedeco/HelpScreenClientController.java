@@ -93,7 +93,7 @@ public class HelpScreenClientController {
             }
         }
 
-        arrayQuestion.add(new Forum(title, question, "null"));
+        arrayQuestion.add(new Forum(title, question, "Not answered"));
         persistForum();
         //System.out.println(arrayQuestion);
 

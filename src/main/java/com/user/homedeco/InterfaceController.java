@@ -76,6 +76,7 @@ public class InterfaceController implements Initializable {
                 //switch to home screen admin
                 Parent home_admin_parent = FXMLLoader.load(getClass().getResource("HomeScreenAdmin.fxml"));
                 Stage home_admin_scene = new Stage();
+                home_admin_scene.initStyle(StageStyle.UNDECORATED);
                 home_admin_scene.setScene(new Scene(home_admin_parent, 818, 484));
                 home_admin_scene.show();
 
