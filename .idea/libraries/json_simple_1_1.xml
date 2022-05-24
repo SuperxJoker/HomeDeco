@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="json-simple-1.1">
     <CLASSES>
-      <root url="jar://E:/json-simple-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../intelijLibraries/json-simple-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

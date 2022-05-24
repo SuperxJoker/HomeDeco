@@ -1,0 +1,13 @@
+[ {
+  "titleKey" : "Trouble ordering",
+  "questionKey" : "How can I order?",
+  "answerKey" : "Select buy items"
+}, {
+  "titleKey" : "Cart",
+  "questionKey" : "How I add to cart?",
+  "answerKey" : "Select item then add"
+}, {
+  "titleKey" : "Review",
+  "questionKey" : "How do i review?",
+  "answerKey" : "Not answered"
+} ]
