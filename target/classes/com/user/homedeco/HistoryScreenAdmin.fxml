@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.HistoryScreenAdminController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7c1f8" height="484.0" stroke="BLACK" strokeType="INSIDE" width="615.0" />
+      <Label layoutX="219.0" layoutY="40.0" text="Clients orders">
+         <font>
+            <Font name="Serif Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="501.0" layoutY="21.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="40.0" prefWidth="25.0" text="x">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TableView fx:id="orderTableAdmin" layoutX="57.0" layoutY="127.0" prefHeight="304.0" prefWidth="501.0">
+        <columns>
+          <TableColumn fx:id="nameOrder" prefWidth="143.3333396911621" text="Product" />
+          <TableColumn fx:id="quantityOrder" prefWidth="116.66667175292969" text="Quantity" />
+            <TableColumn fx:id="colorOrder" prefWidth="102.00006103515625" text="Color" />
+            <TableColumn fx:id="materialOrder" prefWidth="139.33328247070312" text="Material" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
