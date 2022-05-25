@@ -1,10 +1,13 @@
 package com.user.homedeco.model;
 
+import javafx.scene.control.Button;
+
 public class Shop {
     private String name;
     private String quantity;
     private String color;
     private String material;
+    private Button addToCart;
 
     public Shop()
     {
@@ -48,6 +51,7 @@ public class Shop {
     public void setMaterial(String material) {
         this.material = material;
     }
+
 
     @Override
     public String toString() {
