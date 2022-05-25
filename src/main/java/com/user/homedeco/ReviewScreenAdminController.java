@@ -35,7 +35,7 @@ public class ReviewScreenAdminController {
 
     private static List<Review> arrayReview;
     ObservableList<Review> items = FXCollections.observableArrayList();
-    public static String reviewLocation = "src/main/resources/reviewClient.json";
+    public static String reviewLocation = "reviewClient.json";
     public static Path reviewPath = Paths.get(reviewLocation);
 
 
@@ -52,7 +52,7 @@ public class ReviewScreenAdminController {
     }
     public static void loadForum() throws IOException {
         if (!Files.exists(reviewPath)) {
-            FileUtils.copyURLToFile(Objects.requireNonNull(HelpScreenClientController.class.getClassLoader().getResource("src/main/resources/forum.json")), reviewPath.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(HelpScreenClientController.class.getClassLoader().getResource("reviewClient.json")), reviewPath.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();

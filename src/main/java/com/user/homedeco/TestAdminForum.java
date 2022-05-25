@@ -48,7 +48,7 @@ public class TestAdminForum {
     private Label wrongLabel;
 
     private static List<Forum> arrayQuestion;
-    public static String forumLocation = "src/main/resources/forum.json";
+    public static String forumLocation = "forum.json";
     public static Path forumPath = Paths.get(forumLocation);
     ObservableList<Forum> items = FXCollections.observableArrayList();
 
@@ -71,7 +71,7 @@ public class TestAdminForum {
 
     public static void loadForum() throws IOException {
         if (!Files.exists(forumPath)) {
-            FileUtils.copyURLToFile(Objects.requireNonNull(TestAdminForum.class.getClassLoader().getResource("src/main/resources/forum.json")), forumPath.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(TestAdminForum.class.getClassLoader().getResource("forum.json")), forumPath.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();

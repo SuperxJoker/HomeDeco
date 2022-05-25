@@ -13,17 +13,19 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class UserLogin extends Application {
+
     @Override
             public void start(Stage primaryStage) throws Exception{
-             HelpScreenClientController.loadForum();
-             TestAdminForum.loadForum();
-             ReviewScreenClientController.loadForum();
-             ReviewScreenAdminController.loadForum();
+
              Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
              primaryStage.initStyle(StageStyle.UNDECORATED);
              //primaryStage.setTitle("Application");
              primaryStage.setScene(new Scene(root, 818, 484));
              primaryStage.show();
+            HelpScreenClientController.loadForum();
+            TestAdminForum.loadForum();
+           ReviewScreenClientController.loadForum();
+            ReviewScreenAdminController.loadForum();
 
     }
 

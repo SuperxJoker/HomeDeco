@@ -22,14 +22,11 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="json-simple-1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:17-ea+11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:17-ea+11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:18-ea+6" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:18-ea+6" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:18-ea+6" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:18-ea+6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.13.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
@@ -37,6 +34,29 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: io.github.typhon0:AnimateFX:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:javafx:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:container:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:spi:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap:shrinkwrap-api:1.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap:shrinkwrap-impl-base:1.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap:shrinkwrap-spi:1.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api-jboss:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-jboss:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss:jandex:2.1.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:bootstrap:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:config-api:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:config-api-runtime:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.wildfly.common:wildfly-common:1.5.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail.jdk-specific:thorntail-jdk-specific:2" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:logging:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.thorntail:meta-spi:2.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-javaee:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api-javaee:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api-base:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-base:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-spi:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.controlsfx:controlsfx:11.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" level="project" />
@@ -44,5 +64,17 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.0.rc1" level="project" />
     <orderEntry type="library" name="Maven: com.github.lbovolini:ObjectMapper:0.2.3" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:18.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:18.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:18.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:18.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit:4.0.15-alpha" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-core:4.0.15-alpha" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit5:4.0.16-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20220320" level="project" />
   </component>
 </module>
