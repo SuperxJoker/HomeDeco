@@ -31,7 +31,7 @@ public class User {
         JSONParser jp = new JSONParser();
         Object p;
         try {
-            FileReader readFile = new FileReader("src/main/resources/usersClient.json");
+            FileReader readFile = new FileReader("usersClient.json");
             BufferedReader read = new BufferedReader(readFile);
             p = jp.parse(read);
             if (p instanceof JSONArray) {
@@ -60,7 +60,7 @@ public class User {
 
         arrayClient.add(obj);
         try {
-            File file = new File("src/main/resources/usersClient.json");
+            File file = new File("usersClient.json");
             FileWriter fisier = new FileWriter(file.getAbsoluteFile());
             fisier.write(arrayClient.toJSONString());
             fisier.flush();
@@ -104,7 +104,7 @@ public class User {
         Object p;
         JSONArray arrayClient = new JSONArray();
         try {
-            FileReader readFile = new FileReader("src/main/resources/usersClient.json");
+            FileReader readFile = new FileReader("usersClient.json");
             BufferedReader read = new BufferedReader(readFile);
             p = parser.parse(read);
             if (p instanceof JSONArray) {
