@@ -58,10 +58,13 @@ public class HomeScreenClientController implements Initializable {
     public void shopButtonOnAction(ActionEvent event) throws IOException{
 
         getPage("ShopScreenClient");
+        ShopScreenClientController.loadCart();
 
     }
     public void cartButtonOnAction(ActionEvent event) throws IOException{
+
         getPage("CartScreenClient");
+        CartScreenClientController.loadOrders();
 
     }
     public void reviewButtonOnAction(ActionEvent event) throws IOException{
