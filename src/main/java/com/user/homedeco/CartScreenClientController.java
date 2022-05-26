@@ -47,10 +47,10 @@ public class CartScreenClientController{
     @FXML
     private TableColumn<Shop,String> nameCart;
 
-    public static String orderLocation = "src/main/resources/orders/"+ User.name+".json";
+    public static String orderLocation =  User.name+".json";
     public static Path orderPath = Paths.get(orderLocation);
 
-    public static String orderAdminLocation = "src/main/resources/orders/orders.json";
+    public static String orderAdminLocation = "orders.json";
     public static Path orderAdminPath = Paths.get(orderAdminLocation);
 
     protected static List<Shop> purchasedItems = new ArrayList<Shop>();

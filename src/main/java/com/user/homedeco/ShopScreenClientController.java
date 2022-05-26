@@ -60,9 +60,9 @@ public class ShopScreenClientController{
     private Label wrongProduct;
 
 
-    public static String cartLocation = "src/main/resources/shop.json";
+    public static String cartLocation = "shop.json";
     public static Path cartPath = Paths.get(cartLocation);
-    public static Path shopPath = Paths.get("src/main/resources/shop.json");
+    public static Path shopPath = Paths.get("shop.json");
 
 
     protected static List<Shop> cartItems= new ArrayList<Shop>();
@@ -122,12 +122,7 @@ public class ShopScreenClientController{
 
 
     public static void persistForum() throws CouldNotWriteForumException {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(cartPath.toFile(), cartItems);
-        } catch (IOException e) {
-            throw new CouldNotWriteForumException();
-        }
+        ObjectMapper objectMapper = new ObjectMapper();
     }
     public void addToCartOnAction(ActionEvent event){
         wrongProduct.setText(" ");

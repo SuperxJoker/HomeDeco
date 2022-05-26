@@ -47,7 +47,7 @@ public class HistoryScreenAdminController {
     }
 
 
-    public static String orderLocation = "src/main/resources/orders/orders.json";
+    public static String orderLocation = "orders.json";
     public static Path orderPath = Paths.get(orderLocation);
 
     private static List<Shop> orderedItems = new ArrayList<>();
