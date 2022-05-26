@@ -18,4 +18,9 @@
   "quantity" : "aa",
   "color" : "aa",
   "material" : "aa"
+}, {
+  "name" : "Dulap",
+  "quantity" : "10",
+  "color" : "maro",
+  "material" : "lemn"
 } ]

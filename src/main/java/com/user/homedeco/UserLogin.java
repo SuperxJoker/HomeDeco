@@ -26,6 +26,7 @@ public class UserLogin extends Application {
             TestAdminForum.loadForum();
            ReviewScreenClientController.loadForum();
             ReviewScreenAdminController.loadForum();
+            ShopScreenAdminController.loadShop();
 
     }
 

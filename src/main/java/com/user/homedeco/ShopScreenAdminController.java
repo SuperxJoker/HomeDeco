@@ -57,7 +57,7 @@ public class ShopScreenAdminController{
 
 
 
-    protected static List<Shop> shopItems;
+    protected static List<Shop> shopItems= new ArrayList<>();
     public static String shopLocation = "src/main/resources/shop.json";
     public static Path shopPath = Paths.get(shopLocation);
     ObservableList<Shop> shop = FXCollections.observableArrayList();
