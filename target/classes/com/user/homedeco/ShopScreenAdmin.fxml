@@ -18,7 +18,7 @@
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="615.0" />
-      <TextField fx:id="addName" layoutX="37.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="product name" style="-fx-background-color: #e7e4ff;">
+      <TextField fx:id="addName" layoutX="37.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="product name" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
          <font>
             <Font size="13.0" />
          </font>
@@ -26,17 +26,17 @@
             <ColorAdjust />
          </effect>
       </TextField>
-      <TextField fx:id="addQuantity" layoutX="170.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="quantity" style="-fx-background-color: #e7e4ff;">
+      <TextField fx:id="addQuantity" layoutX="170.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="quantity" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="addColor" layoutX="300.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="color" style="-fx-background-color: #e7e4ff;">
+      <TextField fx:id="addColor" layoutX="300.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="color" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="addMaterial" layoutX="431.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="material" style="-fx-background-color: #e7e4ff;">
+      <TextField fx:id="addMaterial" layoutX="431.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="material" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
          <font>
             <Font size="13.0" />
          </font>
@@ -46,12 +46,12 @@
             <Font size="32.0" />
          </font>
       </Button>
-      <TableView fx:id="shopTable" layoutX="151.0" layoutY="163.0" prefHeight="200.0" prefWidth="299.0">
+      <TableView fx:id="shopTable" layoutX="72.0" layoutY="163.0" prefHeight="278.0" prefWidth="449.0">
         <columns>
-          <TableColumn fx:id="product" prefWidth="75.0" style="-fx-font-family: Serif; -fx-background-color: transparent;" text="Product" />
-          <TableColumn fx:id="quantity" prefWidth="75.0" style="-fx-font-family: Serif;" text="Quantity" />
-            <TableColumn fx:id="color" prefWidth="75.0" style="-fx-font-family: Serif;" text="Color" />
-            <TableColumn fx:id="material" prefWidth="75.0" style="-fx-font-family: Serif;" text="Material" />
+          <TableColumn fx:id="product" prefWidth="75.0" style="-fx-background-color: #e7e4ff;" text="Product" />
+          <TableColumn fx:id="quantity" prefWidth="123.33329772949219" style="-fx-background-color: #e7e4ff;" text="Quantity" />
+            <TableColumn fx:id="color" prefWidth="99.3333740234375" style="-fx-background-color: #e7e4ff;" text="Color" />
+            <TableColumn fx:id="material" prefWidth="150.66671752929688" style="-fx-background-color: #e7e4ff;" text="Material" />
         </columns>
       </TableView>
       <Label layoutX="1.0" layoutY="25.0" prefHeight="37.0" prefWidth="615.0" style="-fx-background-color: white;" text="                                  Shop" textAlignment="CENTER" textFill="#221c52d3">
@@ -59,5 +59,10 @@
             <Font name="Serif Italic" size="32.0" />
          </font>
       </Label>
+      <Button fx:id="closeButton" layoutX="582.0" layoutY="-10.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="36.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="x">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
