@@ -11,33 +11,45 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ShopScreenClientController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="BLACK" strokeType="INSIDE" width="615.0" />
-      <Label layoutX="250.0" layoutY="38.0" prefHeight="45.0" prefWidth="115.0" text="Shop">
-         <font>
-            <Font name="Serif Italic" size="40.0" />
-         </font>
-      </Label>
-      <Button fx:id="closeButton" layoutX="546.0" layoutY="31.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="0.0" prefWidth="30.0" text="x">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="TRANSPARENT" strokeType="INSIDE" width="615.0" />
       <TableView fx:id="shopTableClient" layoutX="28.0" layoutY="120.0" prefHeight="327.0" prefWidth="426.0">
         <columns>
-          <TableColumn fx:id="productClient" prefWidth="96.6666488647461" text="Product" />
-          <TableColumn fx:id="quantityClient" prefWidth="121.33335876464844" text="Quantity" />
-            <TableColumn fx:id="colorClient" prefWidth="106.6666259765625" text="Color" />
-            <TableColumn fx:id="materialClient" prefWidth="99.33334350585938" text="Material" />
+          <TableColumn fx:id="productClient" prefWidth="96.6666488647461" style="-fx-background-color: #e7e4ff; -fx-font-family: Serif; -fx-font-size: 14;" text="Product" />
+          <TableColumn fx:id="quantityClient" prefWidth="121.33335876464844" style="-fx-background-color: #e7e4ff; -fx-font-family: Serif; -fx-font-size: 14;" text="Quantity" />
+            <TableColumn fx:id="colorClient" prefWidth="106.6666259765625" style="-fx-background-color: #e7e4ff; -fx-font-family: Serif; -fx-font-size: 14;" text="Color" />
+            <TableColumn fx:id="materialClient" prefWidth="99.33334350585938" style="-fx-background-color: #e7e4ff; -fx-font-family: Serif; -fx-font-size: 14;" text="Material" />
         </columns>
       </TableView>
-      <TextField fx:id="addMaterialClient" layoutX="483.0" layoutY="252.0" prefHeight="25.0" prefWidth="89.0" />
-      <TextField fx:id="addQuantityClient" layoutX="483.0" layoutY="171.0" prefHeight="25.0" prefWidth="89.0" />
-      <TextField fx:id="addNameClient" layoutX="483.0" layoutY="131.0" prefHeight="25.0" prefWidth="89.0" />
-      <Button fx:id="addToCart" layoutX="490.0" layoutY="295.0" mnemonicParsing="false" onAction="#addToCartOnAction" text="Add to cart" />
-      <TextField fx:id="addColorClient" layoutX="483.0" layoutY="217.0" prefHeight="25.0" prefWidth="89.0" />
-      <Label fx:id="wrongProduct" layoutX="469.0" layoutY="348.0" prefHeight="25.0" prefWidth="133.0">
+      <TextField fx:id="addMaterialClient" layoutX="483.0" layoutY="269.0" prefHeight="31.0" prefWidth="100.0" promptText="material" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="addQuantityClient" layoutX="483.0" layoutY="173.0" prefHeight="31.0" prefWidth="100.0" promptText="quantity" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="addNameClient" layoutX="483.0" layoutY="122.0" prefHeight="31.0" prefWidth="100.0" promptText="product" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></TextField>
+      <Button fx:id="addToCart" layoutX="495.0" layoutY="317.0" mnemonicParsing="false" onAction="#addToCartOnAction" style="-fx-background-radius: 0; -fx-background-color: #a1a7e4;" stylesheets="@cssfiles/homepagebuttons.css" text="Add to cart" />
+      <TextField fx:id="addColorClient" layoutX="483.0" layoutY="222.0" prefHeight="31.0" prefWidth="100.0" promptText="color" style="-fx-background-color: #e7e4ff; -fx-background-radius: 0;">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></TextField>
+      <Label fx:id="wrongProduct" layoutX="455.0" layoutY="352.0" prefHeight="25.0" prefWidth="156.0">
          <font>
             <Font name="Serif Regular" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="572.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="36.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="x">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="-1.0" layoutY="35.0" prefHeight="37.0" prefWidth="615.0" style="-fx-background-color: white;" text="                                  Shop" textAlignment="CENTER" textFill="#221c52d3">
+         <font>
+            <Font name="Serif Italic" size="32.0" />
          </font>
       </Label>
    </children>
