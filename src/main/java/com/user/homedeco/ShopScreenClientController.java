@@ -60,7 +60,7 @@ public class ShopScreenClientController{
     private Label wrongProduct;
 
 
-    public static String cartLocation = "src/main/resources/cart/"+User.name+".json";
+    public static String cartLocation = "src/main/resources/shop.json";
     public static Path cartPath = Paths.get(cartLocation);
 
 
