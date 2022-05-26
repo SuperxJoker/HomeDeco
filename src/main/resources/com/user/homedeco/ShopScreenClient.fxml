@@ -2,20 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ShopScreenClientController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ShopScreenClientController">
    <children>
-      <Label layoutX="145.0" layoutY="161.0" text="SHOP">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="BLACK" strokeType="INSIDE" width="615.0" />
+      <Label layoutX="250.0" layoutY="38.0" prefHeight="45.0" prefWidth="115.0" text="Shop">
          <font>
-            <Font size="40.0" />
+            <Font name="Serif Italic" size="40.0" />
          </font>
       </Label>
-      <Button fx:id="closeButton" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" text="x">
+      <Button fx:id="closeButton" layoutX="546.0" layoutY="31.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="0.0" prefWidth="30.0" text="x">
          <font>
-            <Font size="34.0" />
+            <Font size="17.0" />
          </font>
       </Button>
+      <TableView fx:id="shopTableClient" layoutX="28.0" layoutY="120.0" prefHeight="327.0" prefWidth="426.0">
+        <columns>
+          <TableColumn fx:id="productClient" prefWidth="96.6666488647461" text="Product" />
+          <TableColumn fx:id="quantityClient" prefWidth="121.33335876464844" text="Quantity" />
+            <TableColumn fx:id="colorClient" prefWidth="106.6666259765625" text="Color" />
+            <TableColumn fx:id="materialClient" prefWidth="99.33334350585938" text="Material" />
+        </columns>
+      </TableView>
+      <TextField fx:id="addMaterialClient" layoutX="483.0" layoutY="252.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="addQuantityClient" layoutX="483.0" layoutY="171.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="addNameClient" layoutX="483.0" layoutY="131.0" prefHeight="25.0" prefWidth="89.0" />
+      <Button fx:id="addToCart" layoutX="490.0" layoutY="295.0" mnemonicParsing="false" onAction="#addToCartOnAction" text="Add to cart" />
+      <TextField fx:id="addColorClient" layoutX="483.0" layoutY="217.0" prefHeight="25.0" prefWidth="89.0" />
+      <Label fx:id="wrongProduct" layoutX="469.0" layoutY="348.0" prefHeight="25.0" prefWidth="133.0">
+         <font>
+            <Font name="Serif Regular" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

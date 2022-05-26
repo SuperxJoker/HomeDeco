@@ -1,4 +1,0 @@
---patch-module
-com.user.homedeco=_
---add-reads
-com.user.homedeco=ALL-UNNAMED

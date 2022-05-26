@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.user.homedeco.HistoryScreenAdminController.loadOrdersAdmin;
+import static com.user.homedeco.ShopScreenAdminController.loadShop;
+
 public class HomeScreenAdminController implements Initializable {
 
     @FXML
@@ -55,9 +58,11 @@ public class HomeScreenAdminController implements Initializable {
 
         getPage("ShopScreenAdmin");
 
+
     }
     public void ordersButtonOnAction(ActionEvent event) throws IOException{
-        getPage("ViewOrdersAdmin");
+        getPage("HistoryScreenAdmin");
+        loadOrdersAdmin();
 
     }
 

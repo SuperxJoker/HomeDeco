@@ -1,123 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ShopScreenClientController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.homedeco.ShopScreenAdminController">
    <children>
       <Button fx:id="closeButton" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="25.0" prefWidth="36.0" text="x">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="615.0" />
-      <Text fill="#00000081" layoutX="256.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop" textAlignment="CENTER" wrappingWidth="87.91864013671875">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="615.0" />
+      <TextField fx:id="addName" layoutX="37.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="product name" style="-fx-background-color: #e7e4ff;">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </TextField>
+      <TextField fx:id="addQuantity" layoutX="170.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="quantity" style="-fx-background-color: #e7e4ff;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="addColor" layoutX="300.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="color" style="-fx-background-color: #e7e4ff;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="addMaterial" layoutX="431.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" promptText="material" style="-fx-background-color: #e7e4ff;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addProduct" layoutX="542.0" layoutY="76.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="71.0" prefWidth="67.0" style="-fx-border-color: transparent; -fx-background-color: transparent;" text="+" textFill="#e7e4ff">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <TableView fx:id="shopTable" layoutX="151.0" layoutY="163.0" prefHeight="200.0" prefWidth="299.0">
+        <columns>
+          <TableColumn fx:id="product" prefWidth="75.0" style="-fx-font-family: Serif; -fx-background-color: transparent;" text="Product" />
+          <TableColumn fx:id="quantity" prefWidth="75.0" style="-fx-font-family: Serif;" text="Quantity" />
+            <TableColumn fx:id="color" prefWidth="75.0" style="-fx-font-family: Serif;" text="Color" />
+            <TableColumn fx:id="material" prefWidth="75.0" style="-fx-font-family: Serif;" text="Material" />
+        </columns>
+      </TableView>
+      <Label layoutX="1.0" layoutY="25.0" prefHeight="37.0" prefWidth="615.0" style="-fx-background-color: white;" text="                                  Shop" textAlignment="CENTER" textFill="#221c52d3">
          <font>
             <Font name="Serif Italic" size="32.0" />
          </font>
-      </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="47.0" layoutY="110.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="431.0" layoutY="110.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="47.0" layoutY="225.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="242.0" layoutY="225.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="431.0" layoutY="225.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="47.0" layoutY="340.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="242.0" layoutY="340.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="431.0" layoutY="340.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <TextField layoutX="56.0" layoutY="121.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="56.0" layoutY="153.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="122.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="154.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="56.0" layoutY="236.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="56.0" layoutY="268.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="252.0" layoutY="237.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="252.0" layoutY="269.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="237.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="269.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="56.0" layoutY="352.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="56.0" layoutY="384.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="251.0" layoutY="352.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="251.0" layoutY="384.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="352.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="441.0" layoutY="384.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7e4ff" height="81.0" layoutX="243.0" layoutY="113.0" stroke="#0000003b" strokeType="INSIDE" width="137.0" />
-      <TextField layoutX="252.0" layoutY="124.0" prefHeight="25.0" prefWidth="118.0" promptText="add product" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="252.0" layoutY="156.0" prefHeight="25.0" prefWidth="118.0" promptText="add quantity" style="-fx-background-color: #e7e4ff;">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </TextField>
+      </Label>
    </children>
 </Pane>

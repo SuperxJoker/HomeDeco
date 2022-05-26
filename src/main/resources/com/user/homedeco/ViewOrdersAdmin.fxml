@@ -16,16 +16,18 @@
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c1c6f8" height="484.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="615.0" />
-      <Text fill="#00000081" layoutX="253.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders" textAlignment="CENTER" wrappingWidth="117.99999999999994">
+      <Text fill="#00000081" layoutX="224.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View orders" textAlignment="CENTER" wrappingWidth="157.91864013671875">
          <font>
             <Font name="Serif Italic" size="32.0" />
          </font>
       </Text>
-      <TableView layoutX="41.0" layoutY="90.0" prefHeight="353.0" prefWidth="542.0">
+      <TableView layoutX="86.0" layoutY="100.0" prefHeight="200.0" prefWidth="368.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Order ID" />
-          <TableColumn prefWidth="75.0" text="Customer" />
-            <TableColumn prefWidth="75.0" text="Product" />
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
         </columns>
       </TableView>
    </children>
