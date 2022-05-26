@@ -62,6 +62,7 @@ public class ShopScreenClientController{
 
     public static String cartLocation = "src/main/resources/cart/"+User.name+".json";
     public static Path cartPath = Paths.get(cartLocation);
+    public static Path shopPath = Paths.get("src/main/resources/shop.json");
 
 
     protected static List<Shop> cartItems= new ArrayList<Shop>();
@@ -81,6 +82,9 @@ public class ShopScreenClientController{
         //FileUtils.copyURLToFile(Objects.requireNonNull(ShopScreenClientController.class.getClassLoader().getResource("src/main/resources/cart/timeanilgesz.json")), cartPath.toFile());
         ObjectMapper objectMapper = new ObjectMapper();
         cartItems = objectMapper.readValue(cartPath.toFile(), new TypeReference<>() {
+        });
+        Object objectMapperShop = new ObjectMapper();
+        shopItems= objectMapper.readValue(shopPath.toFile(), new TypeReference<>() {
         });
     }
     public void closeButtonOnAction(ActionEvent event){

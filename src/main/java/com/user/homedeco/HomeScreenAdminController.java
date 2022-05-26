@@ -59,6 +59,7 @@ public class HomeScreenAdminController implements Initializable {
         getPage("ShopScreenAdmin");
 
 
+
     }
     public void ordersButtonOnAction(ActionEvent event) throws IOException{
         getPage("HistoryScreenAdmin");
