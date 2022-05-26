@@ -57,8 +57,8 @@ public class ShopScreenAdminController{
 
 
 
-    protected static List<Shop> shopItems = new ArrayList<>();
-    public static String shopLocation = "shop.json";
+    protected static List<Shop> shopItems= new ArrayList<>();
+    public static String shopLocation = "src/main/resources/shop.json";
     public static Path shopPath = Paths.get(shopLocation);
     ObservableList<Shop> shop = FXCollections.observableArrayList();
 
@@ -85,7 +85,7 @@ public class ShopScreenAdminController{
     public static void loadShop() throws IOException {
 
         if (!Files.exists(shopPath)) {
-            FileUtils.copyURLToFile(Objects.requireNonNull(ShopScreenAdminController.class.getClassLoader().getResource("shop.json")), shopPath.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(ShopScreenAdminController.class.getClassLoader().getResource("src/main/resources/shop.json")), shopPath.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
